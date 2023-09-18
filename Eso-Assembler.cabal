@@ -15,10 +15,28 @@ build-type:          Simple
 extra-source-files:  CHANGELOG.md
 cabal-version:       >=1.10
 
+library
+  exposed-modules:
+    Sass.X8.Run
+    Sass.X8.Model
+  build-depends:
+    base,
+    mtl,
+    todo,
+    vector >=0.12
+  ghc-options: -Wall -Werror
+  hs-source-dirs:   lib
+  default-language: Haskell2010
+
 executable Eso-Assembler
   main-is:             Main.hs
   -- other-modules:
   -- other-extensions:
-  build-depends:       base >=4.12 && <4.13
+  build-depends:       
+    base >=4.12 && <4.13,
+    mtl,
+    vector,
+    Eso-Assembler
+  ghc-options: -Wall -Werror
   hs-source-dirs:      src
   default-language:    Haskell2010
